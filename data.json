@@ -1,0 +1,98 @@
+{
+	"Id": "F5B40528-D35B-46A8-ACA3-29C57220A9EC",
+	"Name": "Name 1",
+	"Address": {
+		"Address1": "Addr 1",
+		"Address2": "Addr 2",
+		"Address3": "Addr 3",
+		"City": "London",
+		"Country": "United Kingdom",
+		"PostCode": "SW1A 0AA"
+	},
+	"Directors": [
+		{
+			"Id": "C048EB6F-1C0D-4ECA-87CE-3B55AACB81AE",
+			"Person": {
+				"Name": "Name 1",
+				"EmailAddress": "1@1.com",
+				"PhoneNo": "01242123456",
+				"HasPowerOfAttorney": true
+			},
+			"Address": {
+				"Address1": "Addr 1",
+				"Address2": "Addr 2",
+				"Address3": "Addr 3",
+				"City": "London",
+				"Country": "United Kingdom",
+				"PostCode": "SW1A 0AA"
+			}
+		},
+		{
+			"Id": "CBCAB9D5-FB16-4B0E-8238-1810BF2509E8",
+			"Person": {
+				"Name": "Name 2",
+				"EmailAddress": "2@1.com",
+				"PhoneNo": "01242654321",
+				"HasPowerOfAttorney": false
+			},
+			"Address": {
+				"Address1": "Addr 1",
+				"Address2": "Addr 2",
+				"Address3": "Addr 3",
+				"City": "London",
+				"Country": "United Kingdom",
+				"PostCode": "SW1A 0AA"
+			}
+		}
+	],
+	"Shareholders": [
+		{
+			"Id": "BDF12902-7764-47EB-89BD-6E0F408D3800",
+			"Address": {
+				"Address1": "Addr 1",
+				"Address2": "Addr 2",
+				"Address3": "Addr 3",
+				"City": "London",
+				"Country": "United Kingdom",
+				"PostCode": "SW1A 0AA"
+			},
+			"IsCompany": true,
+			"Directors": [
+				{
+					"Id": "C048EB6F-1C0D-4ECA-87CE-3B55AACB81AE",
+					"Person": {
+						"Name": "Name 1",
+						"EmailAddress": "1@1.com",
+						"PhoneNo": "01242123456",
+						"HasPowerOfAttorney": true
+					},
+					"Address": {
+						"Address1": "Addr 1",
+						"Address2": "Addr 2",
+						"Address3": "Addr 3",
+						"City": "London",
+						"Country": "United Kingdom",
+						"PostCode": "SW1A 0AA"
+					}
+				},
+				{
+					"Id": "CBCAB9D5-FB16-4B0E-8238-1810BF2509E8",
+					"Person": {
+						"Name": "Name 2",
+						"EmailAddress": "2@1.com",
+						"PhoneNo": "01242654321",
+						"HasPowerOfAttorney": false
+					},
+					"Address": {
+						"Address1": "Addr 1",
+						"Address2": "Addr 2",
+						"Address3": "Addr 3",
+						"City": "London",
+						"Country": "United Kingdom",
+						"PostCode": "SW1A 0AA"
+					}
+				}
+			]
+		}
+	]
+}
