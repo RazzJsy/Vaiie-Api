@@ -13,7 +13,7 @@
 
             if (string.IsNullOrEmpty(address.Country))
             {
-                return new ParseCheckExecutionResult(ParseCheckResultType.fail, "Address", address.Country, "Country Missing");
+                return new ParseCheckExecutionResult(ParseCheckResultType.Fail, "Address", address.Country, "Country Missing");
             }
 
             return new ParseCheckExecutionResult(isCountryPresent.DetermineParseCheckResultType(), "Address", address.Country, $"Invalid country '{address.Country}' provided");

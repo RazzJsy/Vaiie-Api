@@ -1,5 +1,3 @@
-
-
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
@@ -50,71 +48,7 @@
             "Id": {
               "type": "string"
             },
-            "Person": {
-              "type": "object",
-              "properties": {
-                "Name": {
-                  "type": "string"
-                },
-                "EmailAddress": {
-                  "type": "string"
-                },
-                "PhoneNo": {
-                  "type": "string"
-                },
-                "HasPowerOfAttorney": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "Name",
-                "EmailAddress",
-                "PhoneNo",
-                "HasPowerOfAttorney"
-              ]
-            },
-            "Address": {
-              "type": "object",
-              "properties": {
-                "Address1": {
-                  "type": "string"
-                },
-                "Address2": {
-                  "type": "string"
-                },
-                "Address3": {
-                  "type": "string"
-                },
-                "City": {
-                  "type": "string"
-                },
-                "Country": {
-                  "type": "string"
-                },
-                "PostCode": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "Address1",
-                "Address2",
-                "Address3",
-                "City",
-                "Country",
-                "PostCode"
-              ]
-            }
-          },
-          "required": [
-            "Id",
-            "Person",
-            "Address"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "Id": {
+            "ParentId": {
               "type": "string"
             },
             "Person": {
@@ -170,12 +104,92 @@
                 "Country",
                 "PostCode"
               ]
+            },
+            "IsBlacklisted": {
+              "type": "boolean"
             }
           },
           "required": [
             "Id",
+            "ParentId",
             "Person",
-            "Address"
+            "Address",
+            "IsBlacklisted"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "Id": {
+              "type": "string"
+            },
+            "ParentId": {
+              "type": "string"
+            },
+            "Person": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string"
+                },
+                "EmailAddress": {
+                  "type": "string"
+                },
+                "PhoneNo": {
+                  "type": "string"
+                },
+                "HasPowerOfAttorney": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "Name",
+                "EmailAddress",
+                "PhoneNo",
+                "HasPowerOfAttorney"
+              ]
+            },
+            "Address": {
+              "type": "object",
+              "properties": {
+                "Address1": {
+                  "type": "string"
+                },
+                "Address2": {
+                  "type": "string"
+                },
+                "Address3": {
+                  "type": "string"
+                },
+                "City": {
+                  "type": "string"
+                },
+                "Country": {
+                  "type": "string"
+                },
+                "PostCode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "Address1",
+                "Address2",
+                "Address3",
+                "City",
+                "Country",
+                "PostCode"
+              ]
+            },
+            "IsBlacklisted": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "Id",
+            "ParentId",
+            "Person",
+            "Address",
+            "IsBlacklisted"
           ]
         }
       ]
@@ -187,6 +201,12 @@
           "type": "object",
           "properties": {
             "Id": {
+              "type": "string"
+            },
+            "ParentId": {
+              "type": "string"
+            },
+            "Name": {
               "type": "string"
             },
             "Address": {
@@ -223,6 +243,9 @@
             "IsCompany": {
               "type": "boolean"
             },
+            "IsBlacklisted": {
+              "type": "boolean"
+            },
             "Directors": {
               "type": "array",
               "items": [
@@ -232,71 +255,7 @@
                     "Id": {
                       "type": "string"
                     },
-                    "Person": {
-                      "type": "object",
-                      "properties": {
-                        "Name": {
-                          "type": "string"
-                        },
-                        "EmailAddress": {
-                          "type": "string"
-                        },
-                        "PhoneNo": {
-                          "type": "string"
-                        },
-                        "HasPowerOfAttorney": {
-                          "type": "boolean"
-                        }
-                      },
-                      "required": [
-                        "Name",
-                        "EmailAddress",
-                        "PhoneNo",
-                        "HasPowerOfAttorney"
-                      ]
-                    },
-                    "Address": {
-                      "type": "object",
-                      "properties": {
-                        "Address1": {
-                          "type": "string"
-                        },
-                        "Address2": {
-                          "type": "string"
-                        },
-                        "Address3": {
-                          "type": "string"
-                        },
-                        "City": {
-                          "type": "string"
-                        },
-                        "Country": {
-                          "type": "string"
-                        },
-                        "PostCode": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "Address1",
-                        "Address2",
-                        "Address3",
-                        "City",
-                        "Country",
-                        "PostCode"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "Id",
-                    "Person",
-                    "Address"
-                  ]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "Id": {
+                    "ParentId": {
                       "type": "string"
                     },
                     "Person": {
@@ -352,12 +311,92 @@
                         "Country",
                         "PostCode"
                       ]
+                    },
+                    "IsBlacklisted": {
+                      "type": "boolean"
                     }
                   },
                   "required": [
                     "Id",
+                    "ParentId",
                     "Person",
-                    "Address"
+                    "Address",
+                    "IsBlacklisted"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "string"
+                    },
+                    "ParentId": {
+                      "type": "string"
+                    },
+                    "Person": {
+                      "type": "object",
+                      "properties": {
+                        "Name": {
+                          "type": "string"
+                        },
+                        "EmailAddress": {
+                          "type": "string"
+                        },
+                        "PhoneNo": {
+                          "type": "string"
+                        },
+                        "HasPowerOfAttorney": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "Name",
+                        "EmailAddress",
+                        "PhoneNo",
+                        "HasPowerOfAttorney"
+                      ]
+                    },
+                    "Address": {
+                      "type": "object",
+                      "properties": {
+                        "Address1": {
+                          "type": "string"
+                        },
+                        "Address2": {
+                          "type": "string"
+                        },
+                        "Address3": {
+                          "type": "string"
+                        },
+                        "City": {
+                          "type": "string"
+                        },
+                        "Country": {
+                          "type": "string"
+                        },
+                        "PostCode": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Address1",
+                        "Address2",
+                        "Address3",
+                        "City",
+                        "Country",
+                        "PostCode"
+                      ]
+                    },
+                    "IsBlacklisted": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "Id",
+                    "ParentId",
+                    "Person",
+                    "Address",
+                    "IsBlacklisted"
                   ]
                 }
               ]
@@ -365,8 +404,11 @@
           },
           "required": [
             "Id",
+            "ParentId",
+            "Name",
             "Address",
             "IsCompany",
+            "IsBlacklisted",
             "Directors"
           ]
         }

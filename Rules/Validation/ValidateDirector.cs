@@ -10,10 +10,10 @@
         {
             if (director.IsBlacklisted)
             {
-                return new ParseCheckExecutionResult(ParseCheckResultType.fail, "Director", "true", "Director is blacklisted", director.ParentId, director.Person.Name);
+                return new ParseCheckExecutionResult(ParseCheckResultType.Fail, "Director", "true", "Director is blacklisted", director.ParentId, director.Person.Name);
             }
 
-            return new ParseCheckExecutionResult(ParseCheckResultType.pass, "Director", director.Person.Name);
+            return new ParseCheckExecutionResult(ParseCheckResultType.Pass, "Director", director.Person.Name);
         }
     }
 }

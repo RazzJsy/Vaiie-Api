@@ -25,7 +25,7 @@
 
             if (cityAndCountryList.Count == 0)
             {
-                cityAndCountryList.Add(new ParseCheckExecutionResult(ParseCheckResultType.na, "Address"));
+                cityAndCountryList.Add(new ParseCheckExecutionResult(ParseCheckResultType.NA, "Address"));
             }
 
             _results = new KeyValuePair<string, List<IResult>>("AddressCountry", cityAndCountryList.AddAdditionalData(RuleId, Title, Rationale).Cast<IResult>().ToList());

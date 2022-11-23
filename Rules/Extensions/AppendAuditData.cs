@@ -15,7 +15,7 @@
 
                 newList.ForEach(a => a.RuleId = ruleId);
                 newList.ForEach(a => a.Title = title);
-                newList.ForEach(a => a.Rationale = a.Result == ParseCheckResultType.fail ? rationale : string.Empty);
+                newList.ForEach(a => a.Rationale = a.Result == ParseCheckResultType.Fail.ToString() ? rationale : string.Empty);
 
                 return newList.Cast<T>().ToList();
             }
@@ -25,7 +25,7 @@
 
                 newList.ForEach(a => a.RuleId = ruleId);
                 newList.ForEach(a => a.Title = title);
-                newList.ForEach(a => a.Rationale = a.Result == ParseCheckResultType.fail ? rationale : string.Empty);
+                newList.ForEach(a => a.Rationale = a.Result == ParseCheckResultType.Fail.ToString() ? rationale : string.Empty);
 
                 return newList.Cast<T>().ToList();
             }

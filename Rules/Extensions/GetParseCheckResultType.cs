@@ -8,11 +8,11 @@
         {
             if (typeof(T) == typeof(bool))
             {
-                return bool.Parse(input.ToString()) ? ParseCheckResultType.pass : ParseCheckResultType.fail;
+                return bool.Parse(input.ToString()) ? ParseCheckResultType.Pass : ParseCheckResultType.Fail;
             }
             else
             {
-                return ParseCheckResultType.count;
+                return ParseCheckResultType.Count;
             }
         }
     }

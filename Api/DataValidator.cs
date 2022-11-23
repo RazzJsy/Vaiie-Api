@@ -34,7 +34,7 @@ namespace Data
 
                     foreach(var item in output.ParseDataOutput)
                     {
-                        _blacklistedList.AddRange(item.Value.Where(a => a.Result == ParseCheckResultType.fail).ToList());
+                        _blacklistedList.AddRange(item.Value.Where(a => a.Result == ParseCheckResultType.Fail.ToString()).ToList());
                     }
 
                     var blackListedString = JsonConvert.SerializeObject(_blacklistedList);

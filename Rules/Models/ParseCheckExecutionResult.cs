@@ -5,7 +5,7 @@
 
     public class ParseCheckExecutionResult : IResult
     {
-        public ParseCheckResultType Result { get; }
+        public string Result { get; }
         public int RuleId { get; set; }
         public string Title { get; set; }
         public string Rationale { get; set; }
@@ -17,7 +17,7 @@
 
         public ParseCheckExecutionResult(ParseCheckResultType result, string elementType, string name = "")
         {
-            Result = result;
+            Result = result.ToString();
             ElementType = elementType;
             Name = name;
             Risk = string.Empty;
@@ -25,7 +25,7 @@
 
         public ParseCheckExecutionResult(ParseCheckResultType result, string elementType, string elementData, string risk, string name = "")
         {
-            Result = result;
+            Result = result.ToString();
             ElementType = elementType;
             ElementData = elementData;
             Name = name;
@@ -34,7 +34,7 @@
 
         public ParseCheckExecutionResult(ParseCheckResultType result, string elementType, string elementData, string risk, Guid parentId, string name = "")
         {
-            Result = result;
+            Result = result.ToString();
             ElementType = elementType;
             ElementData = elementData;
             Name = name;
@@ -46,8 +46,8 @@
         {
             return parseCheckType switch
             {
-                ParseCheckResultType.count => string.Empty,
-                ParseCheckResultType.pass => string.Empty,
+                ParseCheckResultType.Count => string.Empty,
+                ParseCheckResultType.Pass => string.Empty,
                 _ => risk,
             };
         }

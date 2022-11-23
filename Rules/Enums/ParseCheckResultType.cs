@@ -2,10 +2,9 @@
 {
     public enum ParseCheckResultType
     {
-        count,
-        fail,
-        na,
-        observation,
-        pass
+        Fail = 1,
+        Pass = 2,
+        NA = 3,        
+        Count = 4
     }
 }

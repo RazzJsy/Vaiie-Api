@@ -3,6 +3,7 @@
     public enum RuleRefs
     {
         DirectorBlacklisted = 1,
-        AddressCountryPopulated = 2
+        ShareholderBlacklisted = 2,
+        AddressCountryPopulated = 3
     }
 }

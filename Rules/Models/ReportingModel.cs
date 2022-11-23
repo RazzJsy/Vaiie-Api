@@ -11,17 +11,18 @@
     {
         private readonly FindAll _findAll = new();
 
-        public Organisation organisationData = new();
+        public Organisation organisationsData = new();
 
         private readonly List<AbstractRule> rules = new()
         {
             new DirectorBlacklistedParseCheck(),
-            new CityAndCountryPopulatedRule()
+            new ShareholderBlacklistedParseCheck()
+            //new CityAndCountryPopulatedRule()
         };
 
         public void LoadModelFromJson(string body)
         {
-            organisationData = JsonConvert.DeserializeObject<Organisation>(body);
+            organisationsData = JsonConvert.DeserializeObject<Organisation>(body);
         }
 
         public Dictionary<string, List<IResult>> ExecuteRulesInScope()
@@ -48,12 +49,17 @@
             {
                 case "Director":
                     {
-                        objList.AddRange(_findAll.Instances<Director>(organisationData));
+                        objList.AddRange(_findAll.Instances<Director>(organisationsData));
+                        break;
+                    }
+                case "Shareholder":
+                    {
+                        objList.AddRange(_findAll.Instances<Shareholder>(organisationsData));
                         break;
                     }
                 case "Address":
                     {
-                        objList.AddRange(_findAll.Instances<Address>(organisationData));
+                        objList.AddRange(_findAll.Instances<Address>(organisationsData));
                         break;
                     }
                 default:

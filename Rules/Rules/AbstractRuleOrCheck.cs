@@ -17,10 +17,5 @@
         {
             return _results;
         }
-
-        public bool ContainsResults()
-        {
-            return _results.Value.Count > 0;
-        }
     }
 }

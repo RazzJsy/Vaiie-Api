@@ -7,6 +7,7 @@
         public string Name { get; set; }
         public Address Address { get; set; }
         public bool IsCompany { get; set; }
+        public bool IsBlacklisted { get; set; }
         public List<Director> Directors { get; set; }
     }
 

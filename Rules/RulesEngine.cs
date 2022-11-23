@@ -16,7 +16,7 @@
         {
             Dictionary<string, List<IResult>> parseDataOutput = new();
 
-            if (_model.organisationData != null)
+            if (_model.organisationsData != null)
             {
                 Dictionary<string, List<IResult>> parseOutput = _model.ExecuteRulesInScope();
                 parseDataOutput = parseOutput;
