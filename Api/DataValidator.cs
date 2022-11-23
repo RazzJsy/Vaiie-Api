@@ -1,38 +1,53 @@
 namespace Data
 {
     using Api.Schema;
-    using Data.Models;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Azure.WebJobs;
     using Microsoft.Azure.WebJobs.Extensions.Http;
     using Newtonsoft.Json;
+    using Rules;
+    using Rules.Enums;
+    using Rules.Interfaces;
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Threading.Tasks;
 
     public class DataValidator
     {
-        private ValidateSchema _validateSchema = new ValidateSchema();
+        private readonly CoreValidator _coreValidator = new();
+        private readonly List<IResult> _blacklistedList = new();
 
         [FunctionName("DataValidator")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "validate")] HttpRequest req)
         {
-            var body = await new StreamReader(req.Body).ReadToEndAsync();
-
-            if (_validateSchema.ValidateJson(body))
+            try
             {
-                var data = JsonConvert.DeserializeObject<Organisation>(body);
+                var body = await new StreamReader(req.Body).ReadToEndAsync();
+                var schemaValidation = ValidateSchema.ValidateJson(body);
 
-                string name = data.Name;
+                if (schemaValidation.Item1)
+                {
+                    var output = _coreValidator.ExecuteValidation(body);
 
-                string responseMessage = string.IsNullOrEmpty(name)
-                    ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                    : $"Hello, {name}. This HTTP triggered function executed successfully.";
+                    foreach(var item in output.ParseDataOutput)
+                    {
+                        _blacklistedList.AddRange(item.Value.Where(a => a.Result == ParseCheckResultType.fail).ToList());
+                    }
 
-                return new OkObjectResult(responseMessage);
+                    var blackListedString = JsonConvert.SerializeObject(_blacklistedList);
+
+                    return new OkObjectResult(blackListedString);
+                }
+
+                return new ObjectResult($"Schema validation failed: {string.Join(", ", schemaValidation.Item2)}");
             }
-
-            return new ObjectResult("Failed validation");
+            catch (Exception ex)
+            {
+                return new ObjectResult($"Error processing request: {ex.Message}");
+            }
         }
     }
 }
