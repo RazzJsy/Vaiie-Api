@@ -16,7 +16,9 @@ Once you have cloned the repository and loaded the Vaiie.sln ensure that:
 
 From inside IDE run the appliction and the Api should load running on Port: 7221
 
-The endpoint can be communicated with by navigating to /api/validate. So an example of the url might be: http://localhost:7221/api/validate
+The endpoint can be communicated with by navigating to /api/validate. 
+
+An example of the url might be: http://localhost:7221/api/validate
 
 Using an external application to test Api's (i.e. [Postman](https://www.postman.com/)) load the files found at the root of the Solution folder (data_good.json and data_bad.json) into the body of a POST request.
 
