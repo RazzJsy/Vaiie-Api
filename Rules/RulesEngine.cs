@@ -1,6 +1,7 @@
 ﻿namespace Rules
 {
     using global::Rules.Enums;
+    using global::Rules.Extensions;
     using global::Rules.Interfaces;
     using global::Rules.Models;
     using Newtonsoft.Json.Linq;
@@ -41,9 +42,9 @@
                 relatedBlacklistedEntities.AddRange(RelatedEntities(body, ((ParseCheckExecutionResult)value).ParentId));
             }
 
-            foreach (var realated in relatedBlacklistedEntities)
+            foreach (var relatedBlacklistedEntity in relatedBlacklistedEntities)
             {
-
+               relatedBlacklistedEntity.RemoveProperties(new string[] { "Address", "IsCompany", "IsBlacklisted", "Directors", "Shareholders", "Person", "Address" });
             }
 
             return relatedBlacklistedEntities;

@@ -1,12 +1,13 @@
 ﻿namespace Rules
 {
     using global::Rules.Interfaces;
+    using Newtonsoft.Json.Linq;
 
     public class CoreValidator
     {
         readonly RulesEngine _rulesEngine = new();
 
-        public List<IResult> ExecuteValidation(string body)
+        public Tuple<List<IResult>, List<JObject>>? ExecuteValidation(string body)
         {
             try
             {
@@ -14,7 +15,7 @@
                 var output = _rulesEngine.ParseRules();
                 var relatedEntities = _rulesEngine.GetRelatedBlacklistedEntities(body);
 
-                return output;
+                return new Tuple<List<IResult>, List<JObject>>(output, relatedEntities);
             }
             catch
             {
