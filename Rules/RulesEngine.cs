@@ -9,7 +9,6 @@
     public class RulesEngine
     {
         private readonly ReportingModel _model = new();
-        private Dictionary<string, List<IResult>> _parseDataOutput = new();
         private readonly List<IResult> _blacklistedList = new();
 
         public void DeserialiseData(string body)
@@ -22,7 +21,6 @@
             if (_model.organisationsData != null)
             {
                 Dictionary<string, List<IResult>> parseOutput = _model.ExecuteRulesInScope();
-                _parseDataOutput = parseOutput;
 
                 foreach (var item in parseOutput)
                 {
@@ -50,7 +48,7 @@
             return relatedBlacklistedEntities;
         }
 
-        private List<JObject> RelatedEntities(string body, Guid parentId)
+        private static List<JObject> RelatedEntities(string body, Guid parentId)
         {
             List<JObject> outputList = new();
 
