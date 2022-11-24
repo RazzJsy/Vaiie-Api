@@ -3,7 +3,7 @@
 
 This is an Azure Functions solution created using .Net6 to meet the specified requirements laid out in the provided brief.
 
-The application is made up of 3 Projects (Api, Data, Rules), with each specific project allowing for easy separation of responsibilities within the solution.
+The application is made up of 3 Projects (Api, Data, Rules) with each specific project allowing for easy separation of responsibilities within the solution.
 
 ## Installation
 
@@ -14,7 +14,9 @@ Once you have cloned the repository and loaded the Vaiie.sln ensure that:
 
 ## Running Api
 
-From inside IDE run the appliction and the Api should load running on Port: 7221.
+From inside IDE run the appliction and the Api should load running on Port: 7221
+
+The endpoint can be communicated with by navigating to /api/validate. So an example of the url might be: http://localhost:7221/api/validate
 
 Using an external application to test Api's (i.e. [Postman](https://www.postman.com/)) load the files found at the root of the Solution folder (data_good.json and data_bad.json) into the body of a POST request.
 
