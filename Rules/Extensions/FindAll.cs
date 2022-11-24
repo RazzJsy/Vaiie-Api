@@ -9,8 +9,8 @@
     {
         public List<T> Instances<T>(object value) where T : class
         {
-            HashSet<object> exploredObjects = new HashSet<object>();
-            List<T> found = new List<T>();
+            HashSet<object> exploredObjects = new();
+            List<T> found = new();
 
             FindAllInstances(value, exploredObjects, found);
 
@@ -23,12 +23,6 @@
             {
                 return;
             }
-
-            // Removed as it made test more consistent BUT might be required
-            //if (exploredObjects.Contains(value))
-            //{
-            //    return;
-            //}
 
             exploredObjects.Add(value);
 
