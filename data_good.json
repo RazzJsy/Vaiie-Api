@@ -12,6 +12,7 @@
 	"Directors": [
 		{
 			"Id": "C048EB6F-1C0D-4ECA-87CE-3B55AACB81AE",
+			"ParentId": "F5B40528-D35B-46A8-ACA3-29C57220A9EC",
 			"Person": {
 				"Name": "Name 1",
 				"EmailAddress": "1@1.com",
@@ -25,10 +26,12 @@
 				"City": "London",
 				"Country": "United Kingdom",
 				"PostCode": "SW1A 0AA"
-			}
+			},
+			"IsBlacklisted": false
 		},
 		{
 			"Id": "CBCAB9D5-FB16-4B0E-8238-1810BF2509E8",
+			"ParentId": "F5B40528-D35B-46A8-ACA3-29C57220A9EC",
 			"Person": {
 				"Name": "Name 2",
 				"EmailAddress": "2@1.com",
@@ -42,12 +45,15 @@
 				"City": "London",
 				"Country": "United Kingdom",
 				"PostCode": "SW1A 0AA"
-			}
+			},
+			"IsBlacklisted": false
 		}
 	],
 	"Shareholders": [
 		{
 			"Id": "BDF12902-7764-47EB-89BD-6E0F408D3800",
+			"ParentId": "F5B40528-D35B-46A8-ACA3-29C57220A9EC",
+			"Name": "Shareholder Co.",
 			"Address": {
 				"Address1": "Addr 1",
 				"Address2": "Addr 2",
@@ -57,9 +63,11 @@
 				"PostCode": "SW1A 0AA"
 			},
 			"IsCompany": true,
+			"IsBlacklisted": false,
 			"Directors": [
 				{
 					"Id": "C048EB6F-1C0D-4ECA-87CE-3B55AACB81AE",
+					"ParentId": "BDF12902-7764-47EB-89BD-6E0F408D3800",
 					"Person": {
 						"Name": "Name 1",
 						"EmailAddress": "1@1.com",
@@ -73,10 +81,12 @@
 						"City": "London",
 						"Country": "United Kingdom",
 						"PostCode": "SW1A 0AA"
-					}
+					},
+					"IsBlacklisted": false
 				},
 				{
 					"Id": "CBCAB9D5-FB16-4B0E-8238-1810BF2509E8",
+					"ParentId": "BDF12902-7764-47EB-89BD-6E0F408D3800",
 					"Person": {
 						"Name": "Name 2",
 						"EmailAddress": "2@1.com",
@@ -90,7 +100,8 @@
 						"City": "London",
 						"Country": "United Kingdom",
 						"PostCode": "SW1A 0AA"
-					}
+					},
+					"IsBlacklisted": false
 				}
 			]
 		}
